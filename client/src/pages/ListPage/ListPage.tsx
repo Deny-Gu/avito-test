@@ -1,9 +1,7 @@
-import ListContainer from "../../widgets/List/ui/ListContainer"
+import ListContainer from "../../widgets/List/ui/ListContainer";
 
 function ListPage() {
-    return (
-        <ListContainer />
-    )
+  return <ListContainer />;
 }
 
-export default ListPage
+export default ListPage;

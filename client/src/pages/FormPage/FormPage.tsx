@@ -1,9 +1,7 @@
-import Form from "../../widgets/Form/ui/Form"
+import Form from "../../widgets/Form/ui/Form";
 
 function FormPage() {
-    return (
-        <Form />
-    )
+  return <Form />;
 }
 
-export default FormPage
+export default FormPage;

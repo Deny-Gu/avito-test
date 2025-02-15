@@ -1,9 +1,7 @@
 import ItemDetailsContainer from "../../widgets/ItemDetails/ui/ItemDetailsContainer";
 
 function ItemDetailsPage() {
-    return (
-        <ItemDetailsContainer />
-    )
+  return <ItemDetailsContainer />;
 }
 
-export default ItemDetailsPage
+export default ItemDetailsPage;

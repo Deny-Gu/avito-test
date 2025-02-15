@@ -1,7 +1,7 @@
 import Register from "../../widgets/Register/ui/Register";
 
 function RegisterPage() {
-    return <Register />
+  return <Register />;
 }
 
-export default RegisterPage
+export default RegisterPage;
