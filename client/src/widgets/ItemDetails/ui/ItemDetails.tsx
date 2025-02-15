@@ -74,8 +74,12 @@ function ItemDetails({ item, handlerEditing }: { item: IAdvertisement, handlerEd
                         {item.experience} лет
                     </div>
                     <div>
-                        <h3>График работы</h3>
-                        {item.workSchedule}
+                        {item.workSchedule &&
+                            <>
+                                <h3>График работы</h3>
+                                {item.workSchedule}
+                            </>
+                        }
                     </div>
                     <div>
                         <h3>Стоимость услуги</h3>

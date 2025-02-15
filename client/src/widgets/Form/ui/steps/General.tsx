@@ -15,8 +15,10 @@ export const General = ({ control, register, errors }: IStepProps ) => {
         <> 
             <Field>
                 <label htmlFor='name'>Название</label>
-                <input {...register("name", { required: 'Введите название объявления' })} type="text" id='name' />
+                <input {...register("name", { required: 'Введите название объявления', minLength: 4, maxLength: 50 })} type="text" id='name' />
                 {errors.name && <FieldError>{errors.name.message?.toString()}</FieldError>}
+                {errors.name && errors.name.type === 'minLength' && <FieldError>Минимально символов 4</FieldError> }
+                {errors.name && errors.name.type === 'maxLength' && <FieldError>Максимально символов 50</FieldError> }
             </Field>
             <Field>
                 <label htmlFor='description'>Описание</label>

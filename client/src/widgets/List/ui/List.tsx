@@ -20,7 +20,7 @@ function ListContainer({ currentItems }: { currentItems: IListItem[]}) {
                                             <Link to={`/items/${el.id}`}>{trimText(el.name, 50)}</Link>
                                         </h3>
                                         <p><span>Категория: </span>{el.type.value}</p>
-                                        <p><span>Местоположение: </span>{trimText(el.location, 200)}</p>
+                                        <p><span>Местоположение: </span>{trimText(el.location, 180)}</p>
                                     </ItemDescription>
                                     <ItemButton>
                                         <button>

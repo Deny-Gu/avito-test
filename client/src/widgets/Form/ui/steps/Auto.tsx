@@ -32,7 +32,8 @@ export const Auto = ({ control, register, errors }: IStepProps ) => {
             </Field>
             <Field>
                 <label htmlFor='mileage'>Пробег</label>
-                <input {...register("mileage")} type="number" id='mileage' />
+                <input {...register("mileage", { required: 'Введите пробег' })} type="number" id='mileage' />
+                {errors.mileage && <FieldError>{errors.mileage.message?.toString()}</FieldError>}
             </Field>
         </>
     )

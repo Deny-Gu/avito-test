@@ -54,7 +54,7 @@ function Form() {
     return (
         <FormWrapper>
             <Title>{item ? 'Редактирование объявления' : 'Новое объявление'}</Title>
-            <Forma onSubmit={handleSubmit(handlerSubmit)}>
+            <Forma onSubmit={handleSubmit(handlerSubmit)} >
                 {step === 1 && <General control={control} register={register} errors={errors} />}
                 {step === 2 && <>
                     {category.includes('Недвижимость') && <Realty control={control} register={register} errors={errors} />}
