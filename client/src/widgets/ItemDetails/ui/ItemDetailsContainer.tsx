@@ -5,6 +5,7 @@ import Loader from "../../../shared/ui/Loader/Loader";
 import ItemDetails from "./ItemDetails";
 import { IAdvertisement } from "../../../shared/types/IAdvertisement";
 import { useAuth } from "../../../app/context/AuthContex";
+import Error from "../../../shared/ui/Error/Error";
 
 function ItemDetailsContainer() {
     const [item, setItem] = useState<IAdvertisement | null>(null)
@@ -34,7 +35,7 @@ function ItemDetailsContainer() {
     }
 
     if (error) {
-        return <p>{'Ошибка'}</p>
+        return <Error err={error} />
     }
 
     if (isLoading) {

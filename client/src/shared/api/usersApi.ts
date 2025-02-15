@@ -1,8 +1,9 @@
-import { IUser } from "../types/IUser"
+import { ILoginUser } from "../types/ILoginUser"
+import { IRegisterUser } from "../types/IRegisterUser"
 
 const URL = 'http://localhost:3000'
 
-export const loginUser = async(user: IUser) => {
+export const loginUser = async(user: ILoginUser) => {
     try {
         const res = await fetch(URL + '/login', {
             method: 'POST',
@@ -16,7 +17,7 @@ export const loginUser = async(user: IUser) => {
     }
 }
 
-export const registerUser = async(user: IUser) => {
+export const registerUser = async(user: IRegisterUser) => {
     try {
         const res = await fetch(URL + '/register', {
             method: 'POST',

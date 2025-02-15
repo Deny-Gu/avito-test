@@ -6,6 +6,7 @@ import { ButtonSubmit, Field, FieldError, Forma, FormAuth, LinkRegister, Error }
 import { registerUser } from "../../../shared/api/usersApi";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../../app/context/AuthContex";
+import { IRegisterUser } from "../../../shared/types/IRegisterUser";
 
 const Register = () => {
     const [error, setError] = useState(null)
@@ -38,11 +39,11 @@ const Register = () => {
           .oneOf([Yup.ref("password")], "Пароли не совпадают")
     });
 
-    const { register, handleSubmit, formState: { errors }, reset } = useForm({
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<IRegisterUser>({
         resolver: yupResolver(formSchema),
       })
   
-    const handlerSubmit = async (data: {username: string, email: string, password: string, cpassword: string }) => {
+    const handlerSubmit = async (data: IRegisterUser) => {
         const res = await registerUser(data)
         if (res.error) {
           setError(res.error)

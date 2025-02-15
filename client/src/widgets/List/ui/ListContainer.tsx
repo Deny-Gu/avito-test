@@ -8,6 +8,7 @@ import { IListItem } from "../types/IListItem";
 import ListSearch from "./ListSearch";
 import ListFilter from "./ListFilter";
 import { useAuth } from "../../../app/context/AuthContex";
+import Error from "../../../shared/ui/Error/Error";
 
 function ListContainer() {
     const [data, setData] = useState<IListItem[]>([])
@@ -54,7 +55,7 @@ function ListContainer() {
     const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
 
     if (error) {
-        return <p>{error}</p>
+        return <Error err={error} />
     }
 
     if (isLoading) {

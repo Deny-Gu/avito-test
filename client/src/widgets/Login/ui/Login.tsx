@@ -5,8 +5,8 @@ import { ButtonSubmit, Field, FieldError, Forma, FormAuth, LinkRegister, Error }
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { loginUser } from "../../../shared/api/usersApi";
-import { IUser } from "../../../shared/types/IUser";
 import { useAuth } from "../../../app/context/AuthContex";
+import { ILoginUser } from "../../../shared/types/ILoginUser";
 
 const Login = () => {
     const [error, setError] = useState(null)
@@ -29,11 +29,11 @@ const Login = () => {
           .max(12, "Максимально 12 символов"),
     });
 
-    const { register, handleSubmit, formState: { errors }, reset } = useForm({
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<ILoginUser>({
         resolver: yupResolver(formSchema),
       })
      
-    const handlerSubmit = async (data: IUser) => {
+    const handlerSubmit = async (data: ILoginUser) => {
         const res = await loginUser(data)
         if (!res.error) {
           authUser(res.user)
