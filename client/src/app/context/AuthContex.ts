@@ -4,7 +4,12 @@ import { IAuth } from "../../shared/types/IAuth";
 const defaultState = {
   isAuth: false,
   isLoading: false,
-  user: null,
+  user: {
+    id: '',
+    username: '',
+    email: '',
+    password: '',
+  },
   error: null,
   authUser: () => {},
   logout: () => {},
