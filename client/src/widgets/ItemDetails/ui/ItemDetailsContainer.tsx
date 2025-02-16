@@ -16,7 +16,7 @@ function ItemDetailsContainer() {
   const navigator = useNavigate();
 
   useEffect(() => {
-    if (id && user) {
+    if (id) {
       setLoading(true);
       setError(null);
       getAdvertisement(id, user.id)
@@ -31,7 +31,7 @@ function ItemDetailsContainer() {
           setLoading(false);
         });
     }
-  }, [id, user]);
+  }, [id, user.id]);
 
   const handlerEditing = () => {
     navigator("/form", { state: item });

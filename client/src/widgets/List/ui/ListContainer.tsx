@@ -21,7 +21,6 @@ function ListContainer() {
   const { user } = useAuth();
 
   useEffect(() => {
-    if (user) {
       setLoading(true);
       setError(null);
       getAdvertisementsAll(user.id)
@@ -35,8 +34,7 @@ function ListContainer() {
         .finally(() => {
           setLoading(false);
         });
-    }
-  }, [user]);
+  }, [user.id]);
 
   const handlerSearch = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
