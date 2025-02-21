@@ -60,6 +60,7 @@ const Register = () => {
       setError(res.error);
     } else {
       reset();
+      alert('Вы успешно зарегистрировались!')
       navigate("/login");
     }
   };
